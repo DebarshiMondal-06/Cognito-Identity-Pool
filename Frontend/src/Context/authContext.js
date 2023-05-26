@@ -12,7 +12,7 @@ const Context = ({ children }) => {
 
 
   const credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'ap-northeast-1:b4df09d4-9ad0-42d1-939b-7d834470e3a2'  //replace with your Identity Pool
+    IdentityPoolId: 'ap-northeast-1:b4-xxxxxx'  //replace with your Identity Pool ID
   })
   const DynamoDB = new AWS.DynamoDB.DocumentClient({
     credentials,
@@ -37,7 +37,7 @@ const Context = ({ children }) => {
   const allowAccess = async (res, data, twitter_data) => {
     if ((res && data) || twitter_data) {
       var Keys = new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'ap-northeast-1:b4df09d4-9ad0-42d1-939b-7d834470e3a2',  //replace with your Identity Pool
+        IdentityPoolId: 'ap-northeast-1:b4-xxxxxx',  //replace with your Identity Pool ID
         Logins: {
           'api.twitter.com': twitter_data ? `${twitter_data.oauth_token};${twitter_data.oauth_token_secret}` : null,
           'accounts.google.com': (res && data) ? res.tokenObj.id_token : null,

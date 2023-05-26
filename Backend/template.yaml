@@ -64,7 +64,9 @@ Resources:
       IdentityPoolName: IdentityPool_SAM
       AllowUnauthenticatedIdentities: true
       SupportedLoginProviders:
-        accounts.google.com: client_id
+        # replace with your google client Id......
+        accounts.google.com: client_id 
+        # replace with your twitter client Id and secret key......
         api.twitter.com: client_id;client_secret
 
 

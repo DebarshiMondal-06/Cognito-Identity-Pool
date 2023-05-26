@@ -28,7 +28,7 @@ const Login = () => {
   const authHandler = (err, t_data) => {
     console.log(err);
     if (err) return toast.error('Login Failed, Try Again!');
-    allowAccess(null, null, t_data);
+    // allowAccess(null, null, t_data);
   };
 
 
@@ -39,7 +39,7 @@ const Login = () => {
         <article style={{ textAlign: 'center', margin: '40px 0px' }}>
           <p className="login--text">Please login with any of Social Account.</p>
           <GoogleLogin
-            clientId="444537954773-ukvvsi8ih2a42jrak9sgieebtkce8k17.apps.googleusercontent.com"  //replace with your client id
+            clientId="your_client_id"  //replace with your client id
             render={renderProps => (
               <button onClick={renderProps.onClick} className="btn btn-info login--btn">Login With Google</button>
             )}
@@ -50,8 +50,8 @@ const Login = () => {
           <TwitterLogin
             className="mt-4"
             authCallback={authHandler}
-            consumerKey="DbfBFje6uA6QJPdE8RxXUqblW"
-            consumerSecret="JuU1yb9DQQbRN5hSI05pQXXPA6aPQHEfviHM4VoP9bayEwbeLn"
+            consumerKey="your_consumer_key"
+            consumerSecret="your_consumer_secret_key"
           />
         </article>
       </div>
