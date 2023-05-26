@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.login--section{
+  margin-top: 10%;
+}
+.login--container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.login--card{
+  width: 40%;
+  border-radius: 8px;
+}
+.logo{
+  margin-top: 40px;
+}
+.logo h4{
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+.login--text{
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.login--btn{
+  text-align: center!important;
+  width: 50%;
+  font-family: 'Poppins', sans-serif!important;
+  font-size: 1.2em!important;
+  text-transform: capitalize;
+  border-style: none!important;
+}
+@media only screen and (max-width: 990px) {
+  .login--section{
+    margin-top: 20%;
+  }
+  .login--card {
+    width: 80%;
+  }
+}
+.toast{
+  color: aqua;
+}

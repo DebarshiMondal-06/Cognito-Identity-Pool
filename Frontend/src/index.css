@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: aliceblue;
+}
+nav{
+  height: 120px;
+  background-color: whitesmoke;
+}
+.navbar-brand, .navbar-brand:hover{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  padding: 50px;
+  color: #4c4c4c;
+  font-size: 30px;
+}
+.buttons{
+  display: flex;
+  gap: 2em;
+  margin-right: 4%;
+}
+.buttons .btn{
+  width: 120px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: white!important;
+  border-radius: 20px;
+}
+
+
+
+
+.search {
+  width: 50%;
+  margin-top: 20px;
+  position: relative;
+}
+.search input{
+  border-radius: 8px;
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  background-color: gainsboro;
+  font-size: 18px;
+  font-weight: bold;
+}
+.search input:focus{
+  box-shadow: none;
+  border: none;
+  background-color: gainsboro;
+}
+.create_btn{
+  position: absolute;
+  right: 10%;
+  top: 12%;
+}
+.create_btn button{
+  padding: 10px 20px;
+  width: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+@media only screen and (max-width: 990px) {
+  .search{
+    width: 100%;
+    text-align: center;
+  }
+  .buttons{
+    display: none;
+  }
+}
+
+
+/* ***************** Craete Input ************************* */
+
+.contact_main{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+.contact_card{
+  margin-bottom: 5%;
+  background-color: white;
+  width: 50%;
+  padding: 30px 40px;
+  border-radius: 8px;
+}
+.contact_card h2{
+  font-weight: bold;
+  margin: 30px 0px;
+  background: #535353;
+  background: linear-gradient(to right, #333333, #536976);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+.contact_card input{
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+.contact_card textarea{
+  height: 120px;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+.contact_card label{
+  font-weight: bold;
+  color: #333333;
+}
+.contact_card input:focus{
+  background-color: whitesmoke;
+  box-shadow: none;
+  border-bottom: 2.5px solid salmon;
+}
+.contact_card textarea:focus{
+  background-color: whitesmoke;
+  box-shadow: none;
+}
+.contact_btn{
+  font-size: 18px;
+  border: 3px solid;
+  margin: 20px 0px;
+  height: 50px;
+  border-radius: 10px;
+  color: #333333;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+.contact_btn:hover{
+  color: #333333;
+  border: 1px #D1913c;
+  background: #D1913C;  
+  background: linear-gradient(to right, #FFD194, #D1913C); 
+}
+.contact_btn:focus{
+  box-shadow: none;
+  background-color: none!important;
+}
+
+@media only screen and (max-width: 990px) {
+  .contact_card {
+    width: 90%;
+  }
+}
+
+
+.view_section{
+  margin-top: 5%;
+}
+.view_img img{
+  padding: 10px;
+}
+.view_content{
+  padding: 10px 30px;
+}
+.view_content h2{
+  font-size: 3em;
+}
+.view_content p{
+  font-size: 18px;
+}
+.view_likes{
+  margin-top: 20px;
+  position: relative;
+}
+.view_likes .btn{
+  padding: 5px 15px;
+  font-size: 22px;
+  box-shadow: none;
+  border: 2px solid silver;
+  border-radius: 10px;
+}
+.view_likes span{
+  font-size: 24px;
+  position: absolute;
+  top: 5px;
+}
+
+
+
+
