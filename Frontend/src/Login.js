@@ -50,8 +50,8 @@ const Login = () => {
           <TwitterLogin
             className="mt-4"
             authCallback={authHandler}
-            consumerKey="TYDTWf03VAq1zkjsXC9uDd6Lv"
-            consumerSecret="jorzEt1mkgxVSCKA4VQOE7NHXwyVfyHpOxjUR6q0CcZ4N2yirK"
+            consumerKey="DbfBFje6uA6QJPdE8RxXUqblW"
+            consumerSecret="JuU1yb9DQQbRN5hSI05pQXXPA6aPQHEfviHM4VoP9bayEwbeLn"
           />
         </article>
       </div>
