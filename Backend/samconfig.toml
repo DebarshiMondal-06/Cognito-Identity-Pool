@@ -1,0 +1,10 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "bookstore-app"
+s3_bucket = "my-book-store-app"
+region = "ap-south-1"
+profile = "personal"
+confirm_changeset = true
+capabilities = "CAPABILITY_NAMED_IAM"
+disable_rollback = true
+image_repositories = []

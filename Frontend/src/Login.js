@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from '@react-oauth/google';
 import { toast } from 'react-toastify';
 import './login.css';
 import TwitterLogin from "react-twitter-login";
@@ -13,6 +13,7 @@ const Login = () => {
 
   const responseSuccess = (res) => {
     if (res) {
+      console.log("G Info", res);
       allowAccess(res, res.profileObj, null);
     } else {
       toast.error('User Not Found!');
@@ -38,14 +39,14 @@ const Login = () => {
       <div className="login--card card shadow">
         <article style={{ textAlign: 'center', margin: '40px 0px' }}>
           <p className="login--text">Please login with any of Social Account.</p>
-          <GoogleLogin
-            clientId="your_client_id"  //replace with your client id
-            render={renderProps => (
-              <button onClick={renderProps.onClick} className="btn btn-info login--btn">Login With Google</button>
-            )}
-            onSuccess={responseSuccess}
-            onFailure={responseError}
-          />
+          <button className="btn btn-info login--btn">
+            <GoogleLogin
+              onSuccess={responseSuccess}
+              onError={responseError}
+            >
+              Login With Google
+            </GoogleLogin>
+          </button>
           <br />
           <TwitterLogin
             className="mt-4"

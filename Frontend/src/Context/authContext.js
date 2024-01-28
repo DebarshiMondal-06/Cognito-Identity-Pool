@@ -12,7 +12,7 @@ const Context = ({ children }) => {
 
 
   const credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'ap-northeast-1:b4-xxxxxx'  //replace with your Identity Pool ID
+    IdentityPoolId: 'ap-south-1:d976d87b-9d88-4168-9bb2-3637cb88095c'  //replace with your Identity Pool ID
   })
   const DynamoDB = new AWS.DynamoDB.DocumentClient({
     credentials,

@@ -21,7 +21,7 @@ Resources:
     Properties:
       FunctionName: BookFunction
       Handler: logic.handler
-      Runtime: nodejs14.x
+      Runtime: nodejs18.x
       Description: manage books
       Policies:
         Statement:
@@ -61,11 +61,11 @@ Resources:
   IdentityPool:
     Type: "AWS::Cognito::IdentityPool"
     Properties:
-      IdentityPoolName: IdentityPool_SAM
+      IdentityPoolName: BookStore_IdentityPool
       AllowUnauthenticatedIdentities: true
       SupportedLoginProviders:
         # replace with your google client Id......
-        accounts.google.com: client_id 
+        accounts.google.com: 444537954773-ukvvsi8ih2a42jrak9sgieebtkce8k17.apps.googleusercontent.com
         # replace with your twitter client Id and secret key......
         api.twitter.com: client_id;client_secret
 
