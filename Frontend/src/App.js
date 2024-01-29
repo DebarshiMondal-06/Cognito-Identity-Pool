@@ -14,9 +14,11 @@ import Login from './Login';
 
 
 const App = () => {
+  
+
   return <Router>
     <GoogleOAuthProvider
-      clientId="444537954773-ukvvsi8ih2a42jrak9sgieebtkce8k17.apps.googleusercontent.com">
+      clientId={process.env.REACT_APP_G_CLIENT_ID}>
       <Context>
         <ToastContainer autoClose="1500" limit={1} />
         <Navbar />

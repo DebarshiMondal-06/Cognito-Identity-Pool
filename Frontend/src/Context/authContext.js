@@ -12,7 +12,7 @@ const Context = ({ children }) => {
 
 
   const credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'ap-south-1:d976d87b-9d88-4168-9bb2-3637cb88095c'  //replace with your Identity Pool ID
+    IdentityPoolId: process.env.REACT_APP_IDP //replace with your Identity Pool ID
   })
   const DynamoDB = new AWS.DynamoDB.DocumentClient({
     credentials,
@@ -34,13 +34,13 @@ const Context = ({ children }) => {
 
 
 
-  const allowAccess = async (res, data, twitter_data) => {
-    if ((res && data) || twitter_data) {
+  const allowAccess = async (res, twitter_data) => {
+    if ((res) || twitter_data) {
       var Keys = new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'ap-northeast-1:b4-xxxxxx',  //replace with your Identity Pool ID
+        IdentityPoolId: process.env.REACT_APP_IDP,  //replace with your Identity Pool ID
         Logins: {
           'api.twitter.com': twitter_data ? `${twitter_data.oauth_token};${twitter_data.oauth_token_secret}` : null,
-          'accounts.google.com': (res && data) ? res.tokenObj.id_token : null,
+          'accounts.google.com': (res) ? res.credential : null,
         }
       });
       Keys.get(async function () {
@@ -49,9 +49,8 @@ const Context = ({ children }) => {
           secretAccessKey: Keys.secretAccessKey,
           sessionToken: Keys.sessionToken
         };
-        console.log(tokens);
         localStorage.setItem('tokens', JSON.stringify(tokens));
-        localStorage.setItem('user', data ? data.email : twitter_data.screen_name);
+        // localStorage.setItem('user', data ? data.email : twitter_data.screen_name);
         credentials.clearCachedId();
         window.location.href = '/';
       });

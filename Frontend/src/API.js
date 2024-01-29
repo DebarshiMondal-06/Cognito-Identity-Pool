@@ -14,7 +14,7 @@ export const sendRequest = async (data, path, method) => {
   });
 
   
-  var url = `https://ihr60cnqe1.execute-api.ap-south-1.amazonaws.com/dev/${path}`; // replace with your api.
+  var url = `${process.env.REACT_APP_API_URL}/${path}`; // replace with your api.
   const request = await aws.sign(url, {
     method: method || 'PUT',
     headers: {

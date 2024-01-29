@@ -12,14 +12,14 @@ Resources:
       StageName: dev
       Name: BookStore_API
       Cors:
-        AllowMethods: "'PUT', 'POST'"
+        AllowMethods: "'PUT,POST,OPTIONS'"
         AllowHeaders: "'*'"
         AllowOrigin: "'*'"
 
-  LambdaFunction:
+  LambdaFunctionBookStore:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: BookFunction
+      FunctionName: BookStoreFunction
       Handler: logic.handler
       Runtime: nodejs18.x
       Description: manage books

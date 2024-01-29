@@ -2,6 +2,7 @@
 import React, { useContext, useEffect } from 'react'
 import { createAuthContext } from '../Context/authContext';
 import { sendRequest } from '../API';
+import { toast } from 'react-toastify';
 
 
 const Likes = ({ id }) => {
@@ -14,13 +15,13 @@ const Likes = ({ id }) => {
 
 
   const update_likes = (val) => {
-    sendRequest({ count: val, book_id: (id * 1) },'','PUT').then(() => {
+    sendRequest({ count: val, book_id: (id * 1) }, '', 'PUT').then(() => {
       fetch_one(id);
-    }).catch((err) => {
-      console.log(err);
-    });
+    }).catch(() => {
+      toast.error('Token Not Found');
+     });
   }
-  
+
 
 
   return <> <button className="btn" onClick={() => {

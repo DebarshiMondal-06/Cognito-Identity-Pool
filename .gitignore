@@ -1,3 +1,6 @@
 Frontend/node_modules
 .aws-sam
 .vscode
+.env
+samconfig.toml
+yarn.lock

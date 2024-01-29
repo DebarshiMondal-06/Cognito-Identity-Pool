@@ -1,5 +1,8 @@
-const AWS = require('aws-sdk');
-const DynamoDB = new AWS.DynamoDB.DocumentClient();
+const { DynamoDBClient } = require('@aws-sdk/client-dynamodb')
+const { DynamoDBDocument } = require('@aws-sdk/lib-dynamodb')
+
+const client = new DynamoDBClient({});
+const ddbDocClient = DynamoDBDocument.from(client)
 
 const sendResponse = (message, code) => {
     const response = {
@@ -38,18 +41,16 @@ const add_book = (item) => {
 };
 
 
-exports.handler = async(event) => {
+exports.handler = async (event) => {
+    console.log(event);
     try {
         const { count, book_id } = JSON.parse(event.body);
-        // console.log(event);
-
         if (event && event.resource === '/addbook') {
             const getItems = JSON.parse(event.body);
-            await DynamoDB.put(add_book(getItems)).promise();
+            await ddbDocClient.put(add_book(getItems));
             return sendResponse('Updated', 200);
         };
-        console.log('hihi');
-        await DynamoDB.update(update_likes(book_id, count)).promise();
+        await ddbDocClient.update(update_likes(book_id, count));
         return sendResponse('Updated', 200);
     }
     catch (e) {

@@ -1,6 +1,6 @@
 version = 0.1
 [default.deploy.parameters]
-stack_name = "bookstore-app"
+stack_name = "my-book-store-app"
 s3_bucket = "my-book-store-app"
 region = "ap-south-1"
 profile = "personal"
