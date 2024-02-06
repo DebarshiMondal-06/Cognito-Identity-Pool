@@ -25,7 +25,7 @@ const Home = () => {
 
   var filterData = [];
   filterData = value.filter((ele) => {
-    return ele.book.toLowerCase().includes(search.toLowerCase());
+    return ele.book?.toLowerCase().includes(search.toLowerCase());
   });
 
 
