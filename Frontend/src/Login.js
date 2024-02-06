@@ -24,6 +24,8 @@ const Login = () => {
 
 
   const authHandler = (err, t_data) => {
+    console.log(t_data);
+    console.log("eRR :", err);
     if (err) return toast.error('Login Failed, Try Again!');
     // allowAccess(null, null, t_data);
   };
@@ -51,8 +53,8 @@ const Login = () => {
             <TwitterLogin
               className="mt-4"
               authCallback={authHandler}
-              consumerKey="your_consumer_key"
-              consumerSecret="your_consumer_secret_key"
+              consumerKey="YY1YoijCpZDkMWGf4zaU0gONf"
+              consumerSecret="zG1KolpdnCXi3z99hqzXwnqZkNTcJTvsJ9RR28KesXlXBPpKm1"
             />
           </article>
         </div>

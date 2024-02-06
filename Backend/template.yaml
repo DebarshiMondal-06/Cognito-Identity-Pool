@@ -2,7 +2,13 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Cognito Stack
 Transform: 'AWS::Serverless-2016-10-31'
 
-
+Parameters:
+  GClient:
+    Type: String
+    Default: default
+  TClient:
+    Type: String
+    Default: default
 
 
 Resources:
@@ -65,9 +71,9 @@ Resources:
       AllowUnauthenticatedIdentities: true
       SupportedLoginProviders:
         # replace with your google client Id......
-        accounts.google.com: 444537954773-ukvvsi8ih2a42jrak9sgieebtkce8k17.apps.googleusercontent.com
+        accounts.google.com: !Sub ${GClient}
         # replace with your twitter client Id and secret key......
-        api.twitter.com: client_id;client_secret
+        api.twitter.com: !Sub ${TClient}
 
 
   #********************** Phase2 **********************
