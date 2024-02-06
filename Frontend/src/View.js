@@ -36,9 +36,9 @@ const View = () => {
   }
   return <section className="container view_section">
     <main className="row">
-      <div className="card col-md-5 p-2">
+      <div className="card col-md-4 p-2">
         <img className="card-img-top" src={state.url} alt="view"
-          height="500" />
+          height="450" />
       </div>
       <div className="view_content col-md-5">
         <h2>{state.book}</h2>

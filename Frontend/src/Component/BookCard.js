@@ -13,9 +13,9 @@ const BookCard = ({ rawData }) => {
         const { url, author, book_id } = item;
 
         return <Link to={`/view/${book_id}`} key={i}>
-          <div className="card" style={{ width: '21rem', border: 'none', cursor: 'pointer' }}>
+          <div className="card shadow" style={{ width: '21rem', border: 'none', cursor: 'pointer', borderRadius: 10 }}>
             <img src={url} className="card_image p-3 card-img-top"
-              alt="SOME" width="300" height="300" />
+              alt="SOME" width="200" height="350" />
             <div className="card-body" style={{ marginTop: -15 }}>
               <h4 className="h5 card_title p-0">{author}</h4>
             </div>
